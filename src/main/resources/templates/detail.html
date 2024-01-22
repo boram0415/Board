@@ -68,12 +68,14 @@
 
 </body>
 <script th:inline="javascript">
+
     const commentWrite = () => {
         const writer = document.getElementById("commentWriter").value;
         const contents = document.getElementById("commentContents").value;
         console.log("작성자: ", writer);
         console.log("내용: ", contents);
         const id = [[${board.id}]];
+
         $.ajax({
            // 요청방식: post, 요청주소: /comment/save, 요청데이터: 작성자, 작성내용, 게시글번호
            type: "post",
@@ -109,9 +111,11 @@
         });
 
     }
+
     const listReq = () => {
         console.log("목록 요청");
         const page = [[${page}]];
+
         location.href = "/board/paging?page="+page;
     }
     const updateReq = () => {
