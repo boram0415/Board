@@ -46,4 +46,11 @@ public class BoardService {
         }
 
     }
+
+    public BoardDTO update(BoardDTO dto) {
+        // JPA save 로 update,insert 적용 됨 (id 값 유무로 create 인지 update 구분 함)
+        BoardEntity boardEntity = new BoardEntity().toUpdateEntity(dto);
+        boardRepository.save(boardEntity);
+        return findById(dto.getId());
+    }
 }
