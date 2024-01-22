@@ -54,11 +54,16 @@ public class BoardController {
     }
 
     @PostMapping("/update")
-    public String update(@ModelAttribute BoardDTO dto,Model model) {
+    public String update(@ModelAttribute BoardDTO dto, Model model) {
         BoardDTO boardDTO = boardService.update(dto);
         model.addAttribute("board", boardDTO);
         return "detail";
         // return "redirect:/board/" + boardDTO.getId(); << 이 방법 사용 시 조회수 증가함
     }
 
+    @GetMapping("/delete/{id}")
+    public String delete(@PathVariable Long id) {
+        boardService.delete(id);
+        return "redirect:/board/";
+    }
 }
