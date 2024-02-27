@@ -17,7 +17,7 @@ import java.time.LocalDateTime;
 * 모든 필드에 대한 값이 들어가야함을 보장하고 싶을 때 기본 생성자 호출을 막음으로써 무분별한 객체 생성을 막을 수 있다.
  * */
 @NoArgsConstructor
-@AllArgsConstructor // 모든 필드를 매개변수로 하는 생성자
+@AllArgsConstructor // 모든 d필드를 매개변수로 하는 생성자
 public class BoardDTO {
     private Long id;
     private String boardWriter;
